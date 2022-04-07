@@ -1,39 +1,15 @@
-let progress = document.getElementById("progressbar");
-let passiveList = document.getElementsByClassName("passive")
-let bg = document.getElementById("bg");
-
-let totalHeight = document.body.scrollHeight - window.innerHeight;
-
-
-function scrolly() {
-    let progressHeight = (window.pageYOffset / totalHeight) * 100;
-    progress.style.height = progressHeight + "%";
-
-    if (passiveList.length > 0) {
-        if (window.pageYOffset + (2 * window.innerHeight / 3) > passiveList[0].offsetTop) {
-            if (passiveList[0].id == "toolbox" || passiveList[0].id == "box") {
-                passiveList[0].classList.replace("passive", "active-left")
-            }
-            else {
-                passiveList[0].classList.replace("passive", "active-top")
-            }
-        }
-        if (progressHeight >= 90) {
-            for (let i = 0; i < passiveList.length; i++) {
-                passiveList[i].classList.replace("passive", "active-left")
-            }
-        }
-    }
+links = {
+    "console": "console",
+    "arcard": "AR-Card",
+    "webfolio": "WebFolio",
+    "gameportal": null,
+    "github": "https://github.com/ra101",
+    "resume": "https://raw.githubusercontent.com/ra101/ra101/core/Resume.pdf",
+    "source_code": "https://github.com/ra101/ra101.github.io"
 }
 
-addEventListener("scroll", scrolly)
-
-
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("ip_add").innerHTML = this.responseText;
-    }
-};
-xhttp.open("GET", "https://api.ipify.org/", true);
-xhttp.send();
+for (let element_id in links) {
+    document.getElementById(element_id).addEventListener("click", () => {
+        links[element_id] !== null ? window.open(links[element_id], "_blank") : alert("W.I.P.");
+    });
+}

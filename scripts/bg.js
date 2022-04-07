@@ -5,7 +5,6 @@ dot.innerText = ".";
 let virtual = document.getElementById("virtual");
 let num = document.createElement("div");
 num.setAttribute("class", "number");
-
 let noOfStars = Math.floor((window.innerWidth * innerHeight) / 1500);
 
 window.mobileCheck = function () {
@@ -21,8 +20,6 @@ if (!window.mobileCheck()) {
 
     }
 }
-
-
 
 
 function makeStar() {
