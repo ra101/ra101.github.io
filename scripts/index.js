@@ -1,8 +1,8 @@
 links = {
-    "console": "console",
-    "arcard": "AR-Card",
-    "webfolio": "WebFolio",
-    "gameportal": null,
+    "console": "https://console.ra101.dev",
+    "arcard": "https://ar.ra101.dev",
+    "personal-website": "https://web.ra101.dev",
+    "hashnode": "https://journal.ra101.dev",
     "github": "https://github.com/ra101",
     "resume": "https://raw.githubusercontent.com/ra101/ra101/core/Resume.pdf",
     "source_code": "https://github.com/ra101/ra101.github.io"
@@ -10,6 +10,6 @@ links = {
 
 for (let element_id in links) {
     document.getElementById(element_id).addEventListener("click", () => {
-        links[element_id] !== null ? window.open(links[element_id], "_blank") : alert("W.I.P.");
+        window.open(links[element_id], "_blank")
     });
 }
