@@ -1,7 +1,6 @@
 body {
   background: black;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 div.hex {
@@ -168,11 +167,11 @@ div.number {
 }
 
 .bracket.header {
-  top:5rem;
+  top:10rem;
 }
 
 .bracket.footer {
-  bottom:5rem;
+  bottom:10rem;
   transform: rotate(180deg);
 }
 
@@ -194,21 +193,26 @@ div#source_code {
 
 
 @media only screen and (max-width: 1024px) {
-  body {
-    overflow-y: scroll;
+
+  div#wrapper {
+    overflow: scroll;
+    height: 100vh;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
   }
 
   .bracket {
     display: block;
+    filter: drop-shadow(0px 32px 32px black);
   }
 
   div#universe {
     position: fixed;
     background: radial-gradient(
       circle at center,
-      #530053 0%,
-      #320032 30%,
-      #1d001d 70%
+      #9c009c 0%,
+      #530053 35%,
+      #1d001d 80%
     );
   }
 
@@ -233,15 +237,18 @@ div#source_code {
   div.hex.bottom-right,
   div.hex.bottom-left {
     left:0px;
-    min-height: 100vh;
-    top:0px; 
+    height: 100vh;
+    top:0px;
     position: relative;
+    filter: drop-shadow(0px 0px 16px #000000);
+
   }
 
   div.hex img.hexagon{
     height: auto;
     opacity: 0.48;
     width: 90vw;
+    scroll-snap-align: center;
     left:5vw;
     transform: rotate(90deg) translate(50%,0%);
     filter: drop-shadow(0px 0px 64px black);
@@ -257,7 +264,7 @@ div#source_code {
   div.hex div.text {
     margin-top: 6%;
     font-size: 5rem;
-    text-shadow: 0px 0px 8px white;
+    text-shadow: 0px 0px 6rem #56ff6a;
     
   }
   
@@ -265,7 +272,7 @@ div#source_code {
     margin-top: 16%;
     font-size: 7rem;
     font-weight: bold;
-    text-shadow: 0px 0px 48px royalblue;
+    text-shadow: 0px 0px 8rem royalblue;
   }
 
   div#source_code {
