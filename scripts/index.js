@@ -13,3 +13,11 @@ for (let element_id in links) {
         window.open(links[element_id], "_blank")
     });
 }
+
+
+ra101 = document.getElementById("ra101");
+mk_choose = document.getElementById("mk-choose");
+
+ra101.addEventListener("click", ()=>{mk_choose.play()});
+
+window.addEventListener("load", ()=>{mk_choose.play()});
