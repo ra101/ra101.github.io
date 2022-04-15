@@ -119,15 +119,24 @@ div#universe {
   height: 100vh;
   width: 100vw;
   margin: 0;
-  background: radial-gradient(
-    ellipse at center,
-    #1d001d 0%,
-    #0e000e 30%,
-    #000000 70%
-  );
+  background: radial-gradient( ellipse at center, #1d001d 0%, #0e000e 20%, #000000 50% );
+  animation: bgcolor-anim 2s infinite ease-in;
   position: fixed;
   z-index: -99;
 }
+
+@keyframes bgcolor-anim {
+  10% { background: radial-gradient( ellipse at center, #1d001d 0%, #0e000e 22%, #000000 54% ); }
+  20% { background: radial-gradient( ellipse at center, #1d001d 0%, #0e000e 24%, #000000 58% ); }
+  30% { background: radial-gradient( ellipse at center, #1d001d 0%, #0e000e 26%, #000000 62% ); }
+  40% { background: radial-gradient( ellipse at center, #1d001d 0%, #0e000e 28%, #000000 66% ); }
+  50% { background: radial-gradient( ellipse at center, #1d001d 0%, #0e000e 30%, #000000 70% ); }
+  60% { background: radial-gradient( ellipse at center, #1d001d 0%, #0e000e 28%, #000000 66% ); }
+  70% { background: radial-gradient( ellipse at center, #1d001d 0%, #0e000e 26%, #000000 62% ); }
+  80% { background: radial-gradient( ellipse at center, #1d001d 0%, #0e000e 24%, #000000 58% ); }
+  90% { background: radial-gradient( ellipse at center, #1d001d 0%, #0e000e 22%, #000000 54% ); }
+}
+
 
 div.dot {
   display: block;
@@ -208,11 +217,12 @@ div#source_code {
 
   div#universe {
     position: fixed;
+    animation: none;
     background: radial-gradient(
       circle at center,
       #9c009c 0%,
-      #530053 35%,
-      #1d001d 80%
+      #530053 30%,
+      #1d001d 70%
     );
   }
 
