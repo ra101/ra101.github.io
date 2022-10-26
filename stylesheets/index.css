@@ -1,35 +1,37 @@
 body {
   background: black;
   overflow: hidden;
+  height: 100vh;
 }
 
-div.hex {
+
+.hex {
   position: absolute;
-  text-align: center;
-  color: white;
   cursor: pointer;
+  color: white;
+  text-align: center;
+  width: 14rem;
+  height: 10rem;
+  background: radial-gradient(ellipse at center, #0e0e12ab, #000000ab);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.hex:hover{
+  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), #0e0e12ab, #000000ab);
+}
+
+.hex-border {
+  color:white;
+  text-align: center;
+  background-color: #151520;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%,25% 0%, 26% 1%,  1% 50%,  26% 99%,  74% 99%,  99% 50%,  74% 1%, 26% 1%);
+  width: 100%;
+  height: 100%;
 }
 
 div.hex.center{
-  cursor: default;
-}
-
-div.hex img.hexagon {
-  color: white;
-  text-align: center;
-  opacity: 0.75;
-  width: 14rem;
-  height: 10rem;
-  filter: drop-shadow(0px 0px 5px black);
-}
-
-div.hex.center img.hexagon {
   transform: scale(1.1);
-}
-
-
-
-div.hex.center {
+  cursor: default;
   top:calc(50vh - 5rem);
   left:calc(50vw - 7rem);
 }
@@ -77,7 +79,7 @@ div.hex img.icon {
 
 div.hex.center img.icon {
   top: calc(50% - 1.5rem);
-  width:7rem;
+  width: 6.5rem;
   border-radius: 50%;
   filter: drop-shadow(0px 0px 10px black);
 }
@@ -90,7 +92,7 @@ div.hex div.text {
   top: 50%;
   margin-top: 20%;
   left: 50%;
-  transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   font-size: 1rem;
   text-shadow: 0px 0px 1px white;
 }
@@ -103,29 +105,18 @@ div.hex.center div.text {
 }
 
 
-div#wrapper {
-  top: 0px;
-  width: 100%;
-  left: 0px;
-  position: absolute;
-
-  font-family: 'Roboto', sans-serif;
-  align-content: stretch;
-  z-index: 99;
-}
-
 div#universe {
   display: block;
   height: 100vh;
   width: 100vw;
   margin: 0;
-  background: radial-gradient( ellipse at center, #1d001d 0%, #0e000e 20%, #000000 50% );
   animation: bgcolor-anim 2s infinite ease-in;
   position: fixed;
   z-index: -99;
 }
 
 @keyframes bgcolor-anim {
+  0%, 100% {background: radial-gradient( ellipse at center, #1d001d 0%, #0e000e 20%, #000000 50% );}
   10% { background: radial-gradient( ellipse at center, #1d001d 0%, #0e000e 22%, #000000 54% ); }
   20% { background: radial-gradient( ellipse at center, #1d001d 0%, #0e000e 24%, #000000 58% ); }
   30% { background: radial-gradient( ellipse at center, #1d001d 0%, #0e000e 26%, #000000 62% ); }
@@ -227,14 +218,14 @@ div#source_code {
   }
 
   div.hex img.icon {
-    top: calc(50% - 14rem);
+    margin-top: -7rem;
     width:20rem;
     filter: drop-shadow(0px 0px 16px #56ff6a);
   }
 
   div.hex.center img.icon {
-    top: calc(50% - 12rem);
-    width:32rem;
+    margin-top: -7rem;
+    width:28rem;
     border-radius: 50%;
     filter: drop-shadow(0px 0px 24px black);
   }
@@ -246,17 +237,36 @@ div#source_code {
   div.hex.top-right,
   div.hex.bottom-right,
   div.hex.bottom-left {
-    left:0px;
-    height: 100vh;
-    top:0px;
-    position: relative;
-    filter: drop-shadow(0px 0px 16px #000000);
+    width: 76vw;
+    height: 90vw;
+    left:12vw;
+    clip-path: polygon(0% 25%, 50% 0% , 100% 25%, 100% 75%, 50% 100%, 0% 75%);
+    position:relative;
+    margin:0;
+    top: calc((100vh - 90vw)/2);
+    margin-bottom: 100vh;
+    transform: scale(1.1);
 
   }
 
+  div.hex.center{
+    transform: scale(1.2);
+  }
+
+  div.hex.bottom {
+    margin-bottom: 106.4vw;
+  }
+
+  .hex-border {
+    width: 90vw;
+    height: 76vw;
+    translate: -7vw 7vw;
+    rotate: 90deg;
+  }
+
+
   div.hex img.hexagon{
     height: auto;
-    opacity: 0.48;
     width: 90vw;
     scroll-snap-align: center;
     left:5vw;
@@ -272,22 +282,22 @@ div#source_code {
   }
 
   div.hex div.text {
-    margin-top: 6%;
-    font-size: 5rem;
-    text-shadow: 0px 0px 6rem #56ff6a;
-    
-  }
+    margin-top: 20%;
+    font-size: 6rem;
+    width: 100vh;
+    text-shadow: 0px 0px 6rem #56ff6a;  }
   
   div.hex.center div.text {
-    margin-top: 16%;
-    font-size: 7rem;
+    font-size: 7.5rem;
+    width: 100vh;
+    margin-top: 28%;
     font-weight: bold;
     text-shadow: 0px 0px 8rem royalblue;
   }
 
   div#source_code {
     color:#008f11;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     padding: 1rem;
     box-shadow: 0px 0px 10px black;
     border-radius: 3rem;
