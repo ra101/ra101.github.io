@@ -21,16 +21,3 @@ mk_choose = document.getElementById("mk-choose");
 ra101.addEventListener("click", ()=>{mk_choose.play()});
 
 window.addEventListener("load", ()=>{mk_choose.play()});
-
-
-
-document.getElementById("wrapper").onmousemove = e => {
-    for(const card of document.getElementsByClassName("hex")) {
-      const rect = card.getBoundingClientRect(),
-            x = e.clientX - rect.left,
-            y = e.clientY - rect.top;
-
-      card.style.setProperty("--mouse-x", `${x}px`);
-      card.style.setProperty("--mouse-y", `${y}px`);
-    };
-  }
