@@ -18,12 +18,14 @@ Here's the working code. It works in desktop and mobile browsers.
     </head>
     <body>
         <div id="content">
-            <iframe
-                width="100%"
-                height="100%"
-                frameborder="0"
-                src=prompt()
-            ></iframe>
+            <style>
+                var ifr = document.createElement("iframe");
+                ifr.setAttribute("width", "100%");
+                ifr.setAttribute("height", "100%");
+                ifr.setAttribute("frameborder", "0");
+                ifr.setAttribute("src", prompt());
+                document.getElementById('content').appendChild(ifr);
+            </style>
         </div>
     </body>
 </html>
