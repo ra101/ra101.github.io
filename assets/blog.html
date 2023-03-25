@@ -1,0 +1,67 @@
+<html>
+<html>
+<style>
+    body{
+        background-color: white;
+    }
+    img {
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    h1 {
+        position: absolute;
+        z-index: 2;
+        top: calc(50% - 5.5rem);
+        left: calc(50% - 13rem);
+        color: black;
+        opacity: 0;
+        animation: fadeIn 0.5s linear 0.5s forwards;
+        background-color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 5rem;
+        box-shadow: 0px 0px 0.5rem #00236090;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    @keyframes fadeIn{
+        100%{opacity: 1;}
+    }
+
+    img {
+        animation: blurOut 1s linear 0 forwards;
+    }
+
+    h1 span:nth-child(1) {
+        font-style: italic;
+    }
+
+    h1 span:nth-child(2) {
+        color: transparent;
+        text-shadow: 0 0 0 black;
+    }
+
+    a:visited, a:active, a:link {
+        color: #005eff;
+    }
+    a:hover {
+        color: #0099ff;
+    }
+    h1:hover{
+        box-shadow: 0px 0px 0.5rem #0099ff90;
+    }
+
+    </style>
+</html>
+<body onload="reloadImage()">
+    <h1><span> Visit <a href="https://blog.ra101.dev" target="_blank">blog.ra101.dev</a></span><span>🔗</span></h1>
+<center>
+<img src="./blog.gif" height="100%">
+</center>
+</body>
+<script>
+const imgBox = document.getElementsByTagName('img')[0];
+function reloadImage() {imgBox.src = "./blog.gif?t=" + new Date().getTime();}
+</script>
+
+</html>

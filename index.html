@@ -1,71 +1,61 @@
 <head>
-  <title>
-    〈 RA 〉
-  </title>
-  <link href=./stylesheets/index.css rel=stylesheet>
+    <title>〈 RA 〉</title>
+    <link href=./stylesheets/index.css rel=stylesheet>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
- </head>
+<body>
+    <div id="display">
+        <div id="navbar" class="show">
+            <div id="adrBar">
+                <span>🔒</span>
+                <input type="textbox" value="web.ra101.dev" disabled />
+            </div>
+            <p><span> Portfolio(s) </span></p>
+            <div id="portfolio">
+                <button title="web.ra101.dev" id="web"><img src="./assets/web.svg"> <span>Website</span></button>
+                <button title="console.ra101.dev" id="console"><img src="./assets/console.svg"><span>console</span></button>
+                <button title="google.ra101.dev" id="gfolio"><img src="./assets/gfolio.svg"><span>
+                    <span style="color:#a770ff;">G</span>
+                    <span style="color:#f25e51;">o</span>
+                    <span style="color:#fcbc05;">o</span>
+                    <span style="color:#629eff;">g</span>
+                    <span style="color:#57c474;">l</span>
+                    <span style="color:#f25e51;">e</span>
+                    <span>&nbsp;•&nbsp;</span>
+                    <span style="color:#a770ff;">F</span>
+                    <span style="color:#fcbc05;">o</span>
+                    <span style="color:#57c474;">l</span>
+                    <span style="color:#629eff;">i</span>
+                    <span style="color:#f25e51;">o</span>
+                </span></button>
+                <button title="ar.ra101.dev" id="ar"><img src="./assets/ar.svg">&nbsp;<span><span>AR Card</span><span>AR Card</span><span>AR Card</span></button>
+            </div>
+            <p><span> Blog </span></p>
+            <div id="blog">
+                <button title="blog.ra101.dev" data-value="./assets/blog.html" id="blog"><img src="./assets/blog.svg"><span>Hashnode</span></button>
+            </div>
+            <p><span> Video </span></p>
+            <div id="video">
+                <button title="odysee.com/@ra101" data-value="./assets/vid.html" id="vid"><img src="./assets/vid.svg"><span>Odysee</button>
+            </div>
+            <p><span> Socials </span></p>
+            <div id="socials">
+                <a href="https://linkedin.com/in/agarwal-parth/" target="_blank"> <img src="./assets/linkedin.svg"> </a>
+                <a href="mailto:ping@ra101.dev" target="_blank"> <img src="./assets/protomail.svg"> </a>
+                <a href="https://t.me/ra_101" target="_blank"> <img src="./assets/telegram.svg"> </a>
+            </div>
+            <p><span> Other </span></p>
+            <div id="other">
+                <a href="https://dev.to/ra101" target="_blank"> <img src="./assets/dev.svg"> </a>
+                <a href="https://github.com/ra101/" target="_blank"> <img src="./assets/github.svg"> </a>
+                <a href="https://youtube.com/@_ra101" target="_blank"> <img src="./assets/youtube.svg"> </a>
+            </div>
+        </div>
+        <div id="controller"><img src="./assets/slider.svg" /></div>
 
-  <body>
-    <div id="virtual"></div>
-    <div id="universe"></div>
-    <img class="bracket header"  src="./assets/bracket.png" >
-    <img class="bracket footer" src="./assets/bracket.png" >
-    <div id="wrapper">
-      <div class="hex center" id="ra101" title="Parth Agarwal">
-        <img class="hexagon" src="./assets/hex.png" >
-        <img class="icon" src="./assets/dp_avatar.jpg">
-        <div class="text">〈 RA 〉</div>
-      </div>
-    <div class="hex top-left" id="personal-website" title="://web.ra101.dev">
-      <img class="hexagon" src="./assets/hex.png" >
-      <div class="text">Web</div>
-      <img class="icon" src="./assets/web.png">
+        <iframe id="loading_frame" frameborder="0" src="./assets/loading.html"></iframe>
+        <iframe id="display_frame" frameborder="0" src=""></iframe>
     </div>
-    <div class="hex top-right" id="console" title="://console.ra101.dev">
-      <img class="hexagon" src="./assets/hex.png" >
-      <div class="text">Console</div>
-      <img class="icon" src="./assets/console.png">
-    </div>
-
-    <div class="hex bottom-left" id="arcard" title="://ar.ra101.dev">
-      <img class="hexagon" src="./assets/hex.png" >
-      <div class="text">AR Card</div>
-      <img class="icon" src="./assets/ar.png">
-    </div>
-    <div class="hex bottom-right" id="hashnode" title="://ar.ra101.dev">
-      <img class="hexagon" src="./assets/hex.png" >
-      <div class="text">Journal</div>
-      <img class="icon" src="./assets/journal.png">
-    </div>
-    <div class="hex top" id="github"  title="://github.com/ra101">
-      <img class="hexagon" src="./assets/hex.png" >
-      <div class="text">GitHub</div>
-      <img class="icon" src="./assets/github.png">
-    </div>
-
-    <div class="hex bottom" id="resume">
-      <img class="hexagon" src="./assets/hex.png" >
-      <div class="text">Résumé</div>
-      <img class="icon" src="./assets/resume.png">
-    </div>
-
-    <div id="source_code">source_code</div>
-    </div>
-
-	<audio id="mk-choose" src="./assets/bg.mp3" type="audio/mpeg"></audio>
-
-  <script type="text/javascript" src="./scripts/bg.js"></script>
-  <script type="text/javascript" src="./scripts/index.js"></script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ7C9KKFWV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-CQ7C9KKFWV');
-  </script>
-
-  </body>
+    <script type="text/javascript" src="./scripts/index.js"></script>
+</body>
