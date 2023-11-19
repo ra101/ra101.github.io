@@ -17,8 +17,7 @@ a, img {
     z-index:9;
     cursor: pointer;
     color:white;
-    box-shadow: 0 0 0.2rem white;
-    opacity: 0.5;
+    opacity: 0.75;
     user-select: none;
 }
 
@@ -55,6 +54,7 @@ a, img {
 iframe {
     background: gray;
     width: 100%;
+    height: 100vh;
 }
 
 #display_frame {
@@ -96,14 +96,16 @@ iframe {
     background: #eee;
     padding-left: 2rem;
     border-radius: 1rem;
+    font-weight: bold;
     font-size: 0.8rem;
-    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    font-family: 'Courier New', Courier, monospace,
 }
 
 #adrBar span{
     user-select: none;
     position: absolute;
     margin-left: 0.5rem;
+    filter: grayscale(100) brightness(0.5);
 }
 
 
@@ -234,61 +236,3 @@ p {
      background-color:#202020;
      color: white;
  }
-
- /* #navbar.web button span, #navbar.ar button span, #navbar.console button span,
- #navbar.gfolio button span, #navbar.blog button span, #navbar.vid button span
- {animation: theme 0.5s linear 0s forwards;}
- @keyframes theme{0%{color: #777;}}
-
-.web p span {color: #eee;animation: web 0.5s linear 0s forwards;}
-#navbar.web {animation: web 0.5s linear 0s forwards;}
-#navbar.web a img {animation: web1 0.5s linear 0s forwards;}
-#navbar.web button {animation: web2 0.5s linear 0s forwards;}
-@keyframes web{100%{background-color: #000}}
-@keyframes web1{100%{filter: invert(1);}}
-@keyframes web2{100%{color: white;}}
-
-.console p span {color: #eee;animation: console 0.5s linear 0s forwards;}
-#navbar.console {animation: console 0.5s linear 0s forwards;}
-#navbar.console a img {animation: console1 0.5s linear 0s forwards;}
-#navbar.console button {animation: console2 0.5s linear 0s forwards;}
-@keyframes console{100%{background-color: #222}}
-@keyframes console1{100%{filter: invert(1);}}
-@keyframes console2{100%{color: white;}}
-
-.gfolio p span {color: black;animation: gfolio 0.5s linear 0s forwards;}
-.gfolio p { border-color: black;}
-#navbar.gfolio {animation: gfolio 0.5s linear 0s forwards;}
-#navbar.gfolio a img {animation: gfolio1 0.5s linear 0s forwards;}
-#navbar.gfolio button {animation: gfolio2 0.5s linear 0s forwards;}
-@keyframes gfolio{100%{background-color: #c3c9ff}}
-@keyframes gfolio1{100%{filter: invert(0);}}
-@keyframes gfolio2{100%{color: white;}}
-
-.ar p span {color: #000;animation: ar 0.5s linear 0s forwards;}
-.ar p { border-color: #000;}
-#navbar.ar {animation: ar 0.5s linear 0s forwards;}
-#navbar.ar a img {animation: ar1 0.5s linear 0s forwards;}
-#navbar.ar button {animation: ar2 0.5s linear 0s forwards;}
-@keyframes ar{100% {background: linear-gradient(90deg, #ffbdbd 50%, #c3c9ff 50%)}}
-@keyframes ar1{100%{filter: invert(0);}}
-@keyframes ar2{100%{color: black;}}
-
-.blog p span {color: #333;animation: blog 0.5s linear 0s forwards;}
-.blog p { border-color: #333;}
-#navbar.blog {animation: blog 0.5s linear 0s forwards;}
-#navbar.blog button {animation: blog2 0.5s linear 0s forwards;}
-#navbar.blog a img {animation: blog1 0.5s linear 0s forwards;}
-@keyframes blog{100%{background-color: #fff}}
-@keyframes blog1{100%{filter: invert(0);}}
-@keyframes blog2{100%{color: black;}}
-
-
-.vid p span {color: #fff;animation: vid 0.5s linear 0s forwards;}
-.vid p { border-color: #fff;}
-#navbar.vid {animation: vid 0.5s linear 0s forwards;}
-#navbar.vid a img {animation: vid1 0.5s linear 0s forwards;}
-#navbar.vid button {animation: vid2 0.5s linear 0s forwards;}
-@keyframes vid{100%{background-color: #7c152a}}
-@keyframes vid1{100%{filter: invert(1);}}
-@keyframes vid2{100%{color: white;}} */

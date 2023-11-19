@@ -11,7 +11,7 @@
     }
 
     h1 {
-        position: absolute;
+        position: fixed;
         z-index: 2;
         top: calc(50% - 5.5rem);
         left: calc(50% - 13rem);
@@ -47,17 +47,56 @@
         box-shadow: 0px 0px 0.5rem #ee486990;
     }
 
+    img {
+        position: absolute;
+        top: 0;
+        left:0;
+        filter: blur(0);
+        transform: translateY(0);
+        animation: blurOut 1s ease-in 0s forwards;
+    }
+    @keyframes blurOut{
+        from {
+            filter: blur(0px);
+        }
+        to {
+            filter: blur(0.1rem);
+    }
+    }
+
     </style>
 </html>
 <body onload="reloadImage()">
     <h1><span> Visit <a href="https://odysee.tv/@ra101" target="_blank">odysee.tv/@ra101</a></span><span>🔗</span></h1>
 <center>
-<img src="./vid.gif" height="100%">
+<img id="img" src="./vid.jpg" width="100%">
 </center>
 </body>
 <script>
-const imgBox = document.getElementsByTagName('img')[0];
-function reloadImage() {imgBox.src = "./vid.gif?t=" + new Date().getTime();}
-</script>
 
+window.onload = function() {
+
+window.setTimeout( () => {
+    const image = document.getElementById('img');
+    const imageHeight = image.clientHeight;
+    const containerHeight = document.body.clientHeight;
+    console.log(image.height, imageHeight , containerHeight)
+
+    if (imageHeight > containerHeight) {
+        const styleSheet = document.styleSheets[0];
+
+        const keyframes = styleSheet.cssRules[styleSheet.cssRules.length - 1];
+
+        keyframes.deleteRule(0); // Remove the existing rule
+
+        const scrollHeight = imageHeight - containerHeight 
+        const newKeyframes = `from { filter: blur(0);transform: translateY(0); } to { filter: blur(0.1rem);transform: translateY(-${scrollHeight}px); }`;
+        styleSheet.insertRule(`@keyframes blurOut { ${newKeyframes} }`, styleSheet.cssRules.length);
+
+        image.style.animation = `blurOut 1s ease-in 0s forwards`;
+    }
+}, 100 );
+}
+
+</script>
 </html>
