@@ -1,7 +1,8 @@
 const navbar = document.getElementById('navbar');
 const dframe = document.getElementById('display_frame');
 const lframe = document.getElementById('loading_frame');
-const controller = document.getElementById('controller');
+const controller = document.getElementById('burger-input');
+const controller_body = document.getElementsByClassName('burger-btn-body')[0];
 const textBox = document.getElementsByTagName('input')[0];
 const buttonList = document.getElementsByTagName('button')
 
@@ -49,12 +50,12 @@ controller.addEventListener('click',(e)=>{
         navbar.classList.add('hide');
         navbar.classList.remove('show');
     }
-    if (controller.classList.contains('hide')){
-        controller.classList.remove('hide');
-        controller.classList.add('show');
+    if (controller_body.classList.contains('hide')){
+        controller_body.classList.remove('hide');
+        controller_body.classList.add('show');
     } else{
-        controller.classList.add('hide');
-        controller.classList.remove('show');
+        controller_body.classList.add('hide');
+        controller_body.classList.remove('show');
     }
 })
 

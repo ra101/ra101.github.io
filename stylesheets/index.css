@@ -7,7 +7,7 @@ a, img {
     user-select: none;
 }
 
-#controller {
+.burger-btn-body {
     user-select: none;
     position: absolute;
     left: 18.5vw;
@@ -20,7 +20,7 @@ a, img {
     opacity: 0.75;
     user-select: none;
 }
-
+/* 
 #controller img{
     top:0rem;
     user-select: none;
@@ -33,15 +33,12 @@ a, img {
     transform: scaleX(-1);
 }
 
+ */
 
-#controller:hover {
-    opacity: 1;
-}
-
-#controller.hide {animation: slideCtrlLeft 0.25s ease-in-out 0s forwards;}
+.burger-btn-body.hide {animation: slideCtrlLeft 0.35s ease-in-out 0s forwards;}
 @keyframes slideCtrlLeft{100%{left:0.5vw;}}
 
-#controller.show {animation: slideCtrlRight 0.25s ease-in-out  0s forwards;}
+.burger-btn-body.show {animation: slideCtrlRight 0.35s ease-in-out  0s forwards;}
 @keyframes slideCtrlRight{0%{left:0.5vw;}100%{left:18.5vw;}}
 
 #display {
@@ -74,10 +71,10 @@ iframe {
     background: #222;
 }
 
-#navbar.hide {animation: hideNav 0.25s ease-in-out 0s forwards;}
+#navbar.hide {animation: hideNav 0.35s ease-in-out 0s forwards;}
 @keyframes hideNav{100%{margin-left:-22vw;}}
 
-#navBar.show{animation: showNav 0.25s ease-in-out 0s forwards;}
+#navBar.show{animation: showNav 0.35s ease-in-out 0s forwards;}
 @keyframes showNav{0%{margin-left:-22vw;}100%{margin-left:0vw;}}
 
 #adrBar {
@@ -236,3 +233,67 @@ p {
      background-color:#202020;
      color: white;
  }
+
+ 
+.burger-btn-body:hover {
+    opacity: 1;
+}
+
+
+.burger-label{
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #202020;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.burger-input{
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    display: none;
+}
+
+
+.burger-line{
+    position: absolute;
+    display: block;
+    width: 1.5rem;
+    height: .15rem;
+    background-color: #fff;
+    /* border-radius: 40px; */
+}
+
+.burger-line::before,
+.burger-line::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transform-origin: left;
+    transition: width 0.6s , transform 0.6s;
+}
+
+
+.burger-line::before{transform: translateY(-0.55rem);}
+.burger-line::after{transform: translateY(0.35rem);}
+
+
+.burger-input:checked + .burger-label 
+.burger-line::before{
+    width: 60%;
+    transform: translateY(-0.05rem) rotate(-45deg) translateX(-0.1rem);
+}
+
+
+.burger-input:checked + .burger-label 
+.burger-line::after{
+    width: 60%;
+    transform: translateY(-0.15rem) rotate(45deg) translateX(-0.1rem);
+}
