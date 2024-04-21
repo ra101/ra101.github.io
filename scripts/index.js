@@ -1,4 +1,5 @@
 const navbar = document.getElementById('navbar');
+const edge_controller = document.getElementById('edge-controller');
 const dframe = document.getElementById('display_frame');
 const lframe = document.getElementById('loading_frame');
 const controller = document.getElementById('burger-input');
@@ -87,3 +88,31 @@ if (window.mobileCheck()){
 
 
 buttonList[0].click()
+
+
+
+dframe.addEventListener('mouseover', function() {
+    if (navbar.classList.contains('show')) {
+        hideTimer = setTimeout(()=>{controller.click()}, 500)
+    }
+});
+
+dframe.addEventListener('mouseout', function() {
+    clearTimeout(hideTimer);
+});
+
+
+edge_controller.addEventListener('mouseenter', function(event) {
+    if (navbar.classList.contains('hide')) {
+        if (event.clientX < 10){
+            showTimer = setTimeout(()=>{controller.click()}, 100)
+        }
+        else {
+            clearTimeout(showTimer);
+        }    
+    }
+})
+
+edge_controller.addEventListener('mouseleave', function() {
+    clearTimeout(showTimer)
+})

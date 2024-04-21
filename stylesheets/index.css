@@ -297,3 +297,10 @@ p {
     width: 60%;
     transform: translateY(-0.15rem) rotate(45deg) translateX(-0.1rem);
 }
+
+#edge-controller {
+    position: absolute;
+    width: 0.5vw;
+    height: 100%;
+    z-index: 10;
+}
