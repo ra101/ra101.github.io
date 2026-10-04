@@ -1,5 +1,7 @@
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <style>
         body {
   background-color: #202020;
@@ -131,6 +133,80 @@ h1 {
 
 #p > span {
     color: white;
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 0;
+  }
+
+  center {
+    display: flex;
+    position: relative;
+    min-height: 100vh;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  table {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+
+  tr {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  td {
+    display: block;
+    padding: 0;
+  }
+
+  td:last-child {
+    width: max-content;
+    text-align: left;
+  }
+
+  .preloader {
+    transform: scale(0.8);
+    transform-origin: top center;
+    margin: 0 auto -1rem;
+  }
+
+  h1 {
+    margin: 0;
+    width: 100%;
+    font-size: clamp(1.35rem, 6.5vw, 1.9rem);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+    text-align: left;
+  }
+
+  #ra101 {
+    margin-top: 0.35rem;
+    font-size: clamp(1.15rem, 5.5vw, 1.5rem);
+  }
+
+  #craft {
+    position: absolute;
+    left: 50%;
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    margin: 0;
+    width: max-content;
+    font-size: clamp(1.15rem, 7vw, 1.5rem);
+    text-align: center;
+    white-space: nowrap;
+  }
 }
 
 </style>
